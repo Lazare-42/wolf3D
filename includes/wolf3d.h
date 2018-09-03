@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 17:45:25 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/09/03 18:11:18 by lazrossi         ###   ########.fr       */
+/*   Updated: 2018/09/03 18:50:15 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@
 # define P 35
 # define MINUS 78
 # define M 46
+# define LEFT 123
+# define RIGHT 124
+# define UP 126
+# define DOWN 125
 # define VIOLET 0x9370DB
 # define CYAN	0x37FDFC
 
