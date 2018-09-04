@@ -6,15 +6,15 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 17:45:25 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/09/03 18:50:15 by lazrossi         ###   ########.fr       */
+/*   Updated: 2018/09/04 11:40:24 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WOLF3D_H
 # define WOLF3D_H
 
-# define X_SIZE 2560
-# define Y_SIZE 1440
+# define X_SIZE 1000
+# define Y_SIZE 1000
 # define KEYPRESS 2
 # define KEYRELEASE 3
 # define BUTTONPRESS 4
@@ -38,6 +38,7 @@
 # define DOWN 125
 # define VIOLET 0x9370DB
 # define CYAN	0x37FDFC
+# define RESET 0
 
 typedef struct		s_mlx
 {
@@ -47,6 +48,15 @@ typedef struct		s_mlx
 	int				*screen_data;
 	int				keycode;
 }					t_mlx;
+
+typedef struct		s_map
+{
+	char			*map;
+	int				line_size;
+	int				map_height;
+	int				player_pos;
+	int				total_map_size;
+}					t_map;
 
 typedef struct		s_complx
 {
@@ -59,4 +69,5 @@ int					mouse_zoom(int button, int x, int y, int b);
 int					keycode_func(int keycode, int b);
 int					mouse_func(int x, int y, int b);
 t_mlx				set_get_mlx(t_mlx *mlx);
+void				print_map(t_map map);
 #endif

@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 15:27:37 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/08/23 12:37:33 by lazrossi         ###   ########.fr       */
+/*   Updated: 2018/09/04 11:29:33 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "printf.h"
 
 # define BUFF_SIZE 4096
-# define RESET "\x1B[0m"
+# define RESET_PRINTF "\x1B[0m"
 # define BLD "\x1B[1m"
 # define ITA "\x1B[3m"
 # define BLK "\x1B[6m"

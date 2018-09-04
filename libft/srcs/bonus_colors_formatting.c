@@ -6,7 +6,7 @@
 /*   By: lazrossi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 16:25:13 by lazrossi          #+#    #+#             */
-/*   Updated: 2018/07/24 16:28:50 by lazrossi         ###   ########.fr       */
+/*   Updated: 2018/09/04 11:29:30 by lazrossi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ const char	*font_formatting(const char *format, t_str *argument)
 	}
 	else if (!(ft_strncmp(format, "[[end]]", 7)))
 	{
-		update_str(argument, RESET, 4);
+		update_str(argument, RESET_PRINTF, 4);
 		format += 7;
 	}
 	else if (!(ft_strncmp(format, "[[italic]]", 10)))

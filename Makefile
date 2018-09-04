@@ -3,6 +3,7 @@ NAME = Wolf3d
 SOURCES =	main.c \
 			static_vars.c \
 			user_actions.c \
+			debug_funcs.c \
 
 LIBDIR = libft
 
