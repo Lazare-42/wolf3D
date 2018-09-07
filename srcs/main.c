@@ -64,24 +64,22 @@ t_info	vector_angle(t_info info, int tilt)
 	if (angle_tilt == 48 || angle_tilt == -48)
 		angle_tilt = 0;
 
-	if (angle_tilt == 8)
-		origin = 0;
-	else if (angle_tilt == -16)
-		origin = 0;
-	else
-		origin = (M_PI / 6 + angle_tilt * M_PI / 24);
+	origin = -(M_PI / 6 + angle_tilt * M_PI / 24);
 	ft_printf("[[red]] angle_tilt[[end]] : %d\n", (int)angle_tilt);
 	if (!increment_vec)
-		increment_vec = (M_PI / 3) / (X_SIZE / 2);
+		increment_vec = (M_PI / 6) / (X_SIZE / 2);
 	while (i < X_SIZE)
 	{
-		info.vectors[(int)i] = -tan(origin + (i * increment_vec));
+		if (fmod((origin + i * increment_vec) / M_PI, 0.5) == 0)
+			info.vectors[(int)i] = 0;
+		else
+			info.vectors[(int)i] = tan(origin + (i * increment_vec));
 		i++;
 	}
 	print_vector_directions(info);
 	//printf("%f is vector direction in ys at pixel column : %d\n", (float)info.vectors[(int)0], 0);
 	printf("%f  angles in radians / by M_PI at 0\n", (origin + 0 * increment_vec) / M_PI);
-	printf("%f  angles in radians / by M_PI at 0\n", (origin + (i - 1) * increment_vec) / M_PI);
+	printf("%f  angles in radians / by M_PI at X_SIZE\n", (origin + (i - 1) * increment_vec) / M_PI);
 	return (info);
 } 
 
@@ -107,8 +105,7 @@ void	wolf_handler(void)
 
 	if (!load_map)
 	{
-		mlx = set_get_mlx(NULL);
-		info.map = read_map();
+		mlx = set_get_mlx(NULL); info.map = read_map();
 		info = vector_angle(info, 0);
 		load_map = 1;
 	}
