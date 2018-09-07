@@ -4,6 +4,7 @@ SOURCES =	main.c \
 			static_vars.c \
 			user_actions.c \
 			debug_funcs.c \
+			load_map.c \
 
 LIBDIR = libft
 

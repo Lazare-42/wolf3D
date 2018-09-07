@@ -13,8 +13,8 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 
-# define X_SIZE 1000
-# define Y_SIZE 1000
+# define X_SIZE 500
+# define Y_SIZE 500
 # define KEYPRESS 2
 # define KEYRELEASE 3
 # define BUTTONPRESS 4
@@ -36,9 +36,11 @@
 # define RIGHT 124
 # define UP 126
 # define DOWN 125
+# define MOVE_VIEW_LEFT 0
+# define MOVE_VIEW_RIGHT 2
 # define VIOLET 0x9370DB
 # define CYAN	0x37FDFC
-# define RESET 0
+# define RESET 12131233
 
 typedef struct		s_mlx
 {
@@ -65,9 +67,18 @@ typedef struct		s_complx
 	double			pos_offset;
 }					t_complx;
 
+typedef struct		s_info
+{
+	double			vectors[X_SIZE];
+	t_map			map;
+}					t_info;
+
 int					mouse_zoom(int button, int x, int y, int b);
 int					keycode_func(int keycode, int b);
 int					mouse_func(int x, int y, int b);
 t_mlx				set_get_mlx(t_mlx *mlx);
 void				print_map(t_map map);
+void    			print_vector_directions(t_info info);
+t_map				place_player(t_map map);
+t_map				read_map(void);
 #endif
